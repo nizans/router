@@ -3,21 +3,16 @@ import {
   Link,
   Outlet,
   createRootRoute,
-  useRouterState,
+  useNavigationBlockingState,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
-export const useBlocking = () =>
-  useRouterState({
-    select: (state) => state.blocker,
-  })
 
 export const Route = createRootRoute({
   component: RootComponent,
 })
 
 function RootComponent() {
-  const { proceed, reset, status } = useBlocking()
+  const { proceed, reset, status, proceedAll } = useNavigationBlockingState()
 
   return (
     <>
@@ -43,6 +38,18 @@ function RootComponent() {
         >
           <button style={{ border: '1px solid white', padding: '8px' }}>
             Blocking page
+          </button>
+        </Link>
+
+        <Link
+          to="/multi-blockers"
+          activeProps={{
+            className: 'font-bold',
+          }}
+          activeOptions={{ exact: true }}
+        >
+          <button style={{ border: '1px solid white', padding: '8px' }}>
+            Multi blockers page
           </button>
         </Link>
 
@@ -73,6 +80,7 @@ function RootComponent() {
             This modal rendered from __root.tsx, but blocking comes from
             blocking.index.tsx
             <button onClick={proceed}>Proceed</button>
+            <button onClick={proceedAll}>Proceed All</button>
             <button onClick={reset}>Reset</button>
           </div>
         ) : (
