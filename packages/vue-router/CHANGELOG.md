@@ -1,5 +1,21 @@
 # @tanstack/vue-router
 
+## 1.171.0
+
+### Minor Changes
+
+- [`a45cce9`](https://github.com/TanStack/router/commit/a45cce937cee0357b0668d874f205d72cfeaafb3) - Add `useBlockerState` for global navigation-blocking state.
+
+  `useBlockerState` returns `{ status, proceed, reset, proceedAll }`, letting a single shared UI resolve a navigation blocked by any `useBlocker` registered elsewhere in the app, including browser back/forward and multiple blockers.
+
+  The `BlockerFn` contract is extended additively: a blocker may now return an `AsyncGenerator` in addition to the existing `boolean`/`Promise<boolean>`, so existing blockers and custom histories keep working unchanged.
+
+### Patch Changes
+
+- Updated dependencies [[`a45cce9`](https://github.com/TanStack/router/commit/a45cce937cee0357b0668d874f205d72cfeaafb3)]:
+  - @tanstack/history@1.163.0
+  - @tanstack/router-core@1.171.36
+
 ## 1.170.38
 
 ### Patch Changes

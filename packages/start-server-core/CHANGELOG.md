@@ -1,5 +1,15 @@
 # @tanstack/start-server-core
 
+## 1.169.41
+
+### Patch Changes
+
+- Updated dependencies [[`a45cce9`](https://github.com/TanStack/router/commit/a45cce937cee0357b0668d874f205d72cfeaafb3)]:
+  - @tanstack/history@1.163.0
+  - @tanstack/router-core@1.171.36
+  - @tanstack/start-client-core@1.170.36
+  - @tanstack/start-storage-context@1.167.38
+
 ## 1.169.40
 
 ### Patch Changes
