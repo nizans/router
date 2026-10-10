@@ -1,5 +1,12 @@
 # @tanstack/router-core
 
+## 1.171.36
+
+### Patch Changes
+
+- Updated dependencies [[`a45cce9`](https://github.com/TanStack/router/commit/a45cce937cee0357b0668d874f205d72cfeaafb3)]:
+  - @tanstack/history@1.163.0
+
 ## 1.171.35
 
 ### Patch Changes
